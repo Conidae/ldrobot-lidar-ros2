@@ -65,7 +65,12 @@ def generate_launch_description():
         urdf_file_name)
     with open(urdf, 'r') as infp:
         robot_desc = infp.read()
-
+        
+    urdf_file_name = 'handy_description.urdf'
+    urdf = os.path.join(get_package_share_directory('oyanidae'),'urdf',urdf_file_name)
+    with open(urdf,'r') as infp:
+        robot_desc = infp.read()
+        
     # Robot State Publisher node
     rsp_node = Node(
         package='robot_state_publisher',
